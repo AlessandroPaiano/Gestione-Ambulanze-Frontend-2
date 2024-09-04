@@ -1,0 +1,32 @@
+<div>
+    <h2>Lista degli Interventi</h2>
+    <button routerLink="/interventi/detail">Crea Nuovo Intervento</button>
+    <table>
+      <thead>
+        <tr>
+          <th>ID Ambulanza</th>
+          <th>ID Utente</th>
+          <th>Data Ora</th>
+          <th>Descrizione</th>
+          <th>Priorità</th>
+          <th>Stato</th>
+          <th>Azioni</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let intervento of interventi">
+          <td>{{ intervento.ambulanzaId }}</td>
+          <td>{{ intervento.utenteId }}</td>
+          <td>{{ intervento.dataOra }}</td>
+          <td>{{ intervento.descrizione }}</td>
+          <td>{{ intervento.priorita }}</td>
+          <td>{{ intervento.stato }}</td>
+          <td>
+            <button [routerLink]="['/interventi/detail', intervento.id]">Modifica</button>
+            <button (click)="deleteIntervento(intervento.id)">Elimina</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

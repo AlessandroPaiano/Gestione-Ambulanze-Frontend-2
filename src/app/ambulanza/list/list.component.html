@@ -1,0 +1,24 @@
+<div>
+    <h2>Lista delle Ambulanze</h2>
+    <button routerLink="/ambulanze/detail">Crea Nuova Ambulanza</button>
+    <table>
+      <thead>
+        <tr>
+          <th>Numero Veicolo</th>
+          <th>Stato</th>
+          <th>Azioni</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ambulanza of ambulanze">
+          <td>{{ ambulanza.numeroVeicolo }}</td>
+          <td>{{ ambulanza.stato }}</td>
+          <td>
+            <button [routerLink]="['/ambulanze/detail', ambulanza.id]">Modifica</button>
+            <button (click)="deleteAmbulanza(ambulanza.id)">Elimina</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

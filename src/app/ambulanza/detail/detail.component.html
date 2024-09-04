@@ -1,0 +1,20 @@
+<div>
+    <h2>Dettagli Ambulanza</h2>
+    <form (ngSubmit)="saveAmbulanza()">
+      <div>
+        <label for="numeroVeicolo">Numero Veicolo:</label>
+        <input id="numeroVeicolo" [(ngModel)]="ambulanza.numeroVeicolo" name="numeroVeicolo" required />
+      </div>
+      <div>
+        <label for="stato">Stato:</label>
+        <select id="stato" [(ngModel)]="ambulanza.stato" name="stato">
+          <option value="DISPONIBILE">Disponibile</option>
+          <option value="IN_SERVIZIO">In Servizio</option>
+          <option value="IN_MANUTENZIONE">In Manutenzione</option>
+        </select>
+      </div>
+      <button type="submit">Salva</button>
+      <button type="button" routerLink="/ambulanze">Annulla</button>
+    </form>
+  </div>
+  

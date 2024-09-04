@@ -1,0 +1,30 @@
+<div>
+    <h2>Lista dei Turni</h2>
+    <button routerLink="/turni/detail">Crea Nuovo Turno</button>
+    <table>
+      <thead>
+        <tr>
+          <th>Utente</th>
+          <th>Data Inizio</th>
+          <th>Data Fine</th>
+          <th>Tipo Turno</th>
+          <th>Stato</th>
+          <th>Azioni</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let turno of turni">
+          <td>{{ turno.utenteId }}</td>
+          <td>{{ turno.dataInizio }}</td>
+          <td>{{ turno.dataFine }}</td>
+          <td>{{ turno.tipoTurno }}</td>
+          <td>{{ turno.stato }}</td>
+          <td>
+            <button [routerLink]="['/turni/detail', turno.id]">Modifica</button>
+            <button (click)="deleteTurno(turno.id)">Elimina</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

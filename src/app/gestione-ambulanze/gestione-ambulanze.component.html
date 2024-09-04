@@ -1,0 +1,10 @@
+<div>
+    <h2>Gestione Ambulanze</h2>
+    <ul>
+      <li *ngFor="let ambulanza of ambulanze">
+        {{ ambulanza.stato }}
+        <button (click)="gestisciAmbulanza(ambulanza)">Gestisci</button>
+      </li>
+    </ul>
+  </div>
+  

@@ -1,0 +1,36 @@
+<div>
+    <h2>Dettagli Turno</h2>
+    <form (ngSubmit)="saveTurno()">
+      <div>
+        <label for="utenteId">ID Utente:</label>
+        <input id="utenteId" [(ngModel)]="turno.utenteId" name="utenteId" required />
+      </div>
+      <div>
+        <label for="dataInizio">Data Inizio:</label>
+        <input id="dataInizio" [(ngModel)]="turno.dataInizio" name="dataInizio" type="datetime-local" required />
+      </div>
+      <div>
+        <label for="dataFine">Data Fine:</label>
+        <input id="dataFine" [(ngModel)]="turno.dataFine" name="dataFine" type="datetime-local" required />
+      </div>
+      <div>
+        <label for="tipoTurno">Tipo Turno:</label>
+        <select id="tipoTurno" [(ngModel)]="turno.tipoTurno" name="tipoTurno">
+          <option value="MATTINA">Mattina</option>
+          <option value="POMERIGGIO">Pomeriggio</option>
+          <option value="NOTTE">Notte</option>
+        </select>
+      </div>
+      <div>
+        <label for="stato">Stato:</label>
+        <select id="stato" [(ngModel)]="turno.stato" name="stato">
+          <option value="ASSEGNATO">Assegnato</option>
+          <option value="COMPLETATO">Completato</option>
+          <option value="CANCELLATO">Cancellato</option>
+        </select>
+      </div>
+      <button type="submit">Salva</button>
+      <button type="button" routerLink="/turni">Annulla</button>
+    </form>
+  </div>
+  

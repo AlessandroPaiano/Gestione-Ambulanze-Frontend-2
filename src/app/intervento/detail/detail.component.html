@@ -1,0 +1,41 @@
+<div>
+    <h2>Dettagli Intervento</h2>
+    <form (ngSubmit)="saveIntervento()">
+      <div>
+        <label for="ambulanzaId">ID Ambulanza:</label>
+        <input id="ambulanzaId" [(ngModel)]="intervento.ambulanzaId" name="ambulanzaId" required />
+      </div>
+      <div>
+        <label for="utenteId">ID Utente:</label>
+        <input id="utenteId" [(ngModel)]="intervento.utenteId" name="utenteId" required />
+      </div>
+      <div>
+        <label for="dataOra">Data e Ora:</label>
+        <input id="dataOra" [(ngModel)]="intervento.dataOra" name="dataOra" type="datetime-local" required />
+      </div>
+      <div>
+        <label for="descrizione">Descrizione:</label>
+        <input id="descrizione" [(ngModel)]="intervento.descrizione" name="descrizione" required />
+      </div>
+      <div>
+        <label for="priorita">Priorità:</label>
+        <select id="priorita" [(ngModel)]="intervento.priorita" name="priorita">
+          <option value="ALTA">Alta</option>
+          <option value="MEDIA">Media</option>
+          <option value="BASSA">Bassa</option>
+        </select>
+      </div>
+      <div>
+        <label for="stato">Stato:</label>
+        <select id="stato" [(ngModel)]="intervento.stato" name="stato">
+          <option value="PENDING">Pending</option>
+          <option value="IN_PROGRESS">In Progress</option>
+          <option value="COMPLETED">Completed</option>
+          <option value="CANCELLED">Cancelled</option>
+        </select>
+      </div>
+      <button type="submit">Salva</button>
+      <button type="button" routerLink="/interventi">Annulla</button>
+    </form>
+  </div>
+  

@@ -1,0 +1,10 @@
+<nav *ngIf="isAuthenticated()">
+    <ul>
+      <li><a routerLink="/ambulanze">Ambulanze</a></li>
+      <li><a routerLink="/turni">Turni</a></li>
+      <li><a routerLink="/utenti">Utenti</a></li>
+      <li><a routerLink="/interventi">Interventi</a></li>
+      <li><button (click)="logout()">Logout</button></li>
+    </ul>
+  </nav>
+  

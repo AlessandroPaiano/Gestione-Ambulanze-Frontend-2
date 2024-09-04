@@ -1,0 +1,28 @@
+<div>
+    <h2>Dettagli Utente</h2>
+    <form (ngSubmit)="saveUtente()">
+      <div>
+        <label for="nome">Nome:</label>
+        <input id="nome" [(ngModel)]="utente.nome" name="nome" required />
+      </div>
+      <div>
+        <label for="cognome">Cognome:</label>
+        <input id="cognome" [(ngModel)]="utente.cognome" name="cognome" required />
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input id="email" [(ngModel)]="utente.email" name="email" type="email" required />
+      </div>
+      <div>
+        <label for="ruolo">Ruolo:</label>
+        <select id="ruolo" [(ngModel)]="utente.ruolo" name="ruolo">
+          <option value="ADMIN">Admin</option>
+          <option value="OPERATOR">Operator</option>
+          <option value="MEDIC">Medic</option>
+        </select>
+      </div>
+      <button type="submit">Salva</button>
+      <button type="button" routerLink="/utenti">Annulla</button>
+    </form>
+  </div>
+  
